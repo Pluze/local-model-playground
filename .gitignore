@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Everything downloaded, built, generated, or machine-specific lives here.
+.local/
+
+# Partial and invalid downloads must never be committed.
+*.part
+*.invalid-*
+*.sha256
+
+# Editors
+.idea/
+.vscode/

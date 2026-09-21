@@ -1,0 +1,55 @@
+{
+  "default_profile": "compact",
+  "profiles": {
+    "compact": {
+      "label": "Compact",
+      "description": "PTQ1_0, about 6 GB, lowest memory use",
+      "defaults": {"context": 16384, "parallel": 1, "kv_cache": "q8_0", "temperature": 1.0, "top_p": 0.95, "top_k": 20},
+      "model": {
+        "path": "assets/models/llm/Ternary-Bonsai-2-27B-PTQ1_0.gguf",
+        "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf/resolve/6ed5e12bf84b7a63069882c91dd9e9218647d17b/Ternary-Bonsai-2-27B-PTQ1_0.gguf?download=true",
+        "size": 5946648928,
+        "sha256": "53107f530aa52eb00912263ab1ee29bd199261c87cd7b4ad4ca1318c1fe33ee3"
+      },
+      "adapter": {
+        "path": "assets/models/llm/adapters/bonsai-abliterate-lora.gguf",
+        "url": "https://raw.githubusercontent.com/Continuum-AI-Corp/OrcaBonsai-27B-Uncensored/947a80cd1d3b4f9a97417025e6c2c62223571287/gguf/bonsai-abliterate-lora.gguf",
+        "size": 9682464,
+        "sha256": "f1669534803d340a496015f5c45125f3437b4d13ec764f40e34488ce83967f42"
+      }
+    },
+    "uncensored": {
+      "label": "Uncensored (recommended)",
+      "description": "Q3_K_M, about 13.5 GB, stronger quality; HF approval required once",
+      "defaults": {"context": 16384, "parallel": 1, "kv_cache": "q8_0", "temperature": 1.0, "top_p": 0.95, "top_k": 20},
+      "model": {
+        "path": "assets/models/llm/Qwen3.8-27B-Uncensored-Q3_K_M.gguf",
+        "url": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-GGUF/resolve/a855f377abf5cbda99a278414466743f427e97c8/Qwen3.8-27B-Uncensored-Q3_K_M.gguf?download=true",
+        "size": 13500736896,
+        "sha256": "2bdecffabba9fedd93f383ce834b2d185db32a7fa0cc6cddbbadcf56097cd4ae",
+        "gated": true,
+        "source": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-GGUF"
+      }
+    },
+    "direct": {
+      "label": "Direct",
+      "description": "Heretic Q4_K_M, about 17 GB, highest memory use",
+      "defaults": {"context": 8192, "parallel": 1, "kv_cache": "q8_0", "temperature": 1.0, "top_p": 0.95, "top_k": 20},
+      "model": {
+        "path": "assets/models/llm/qwen3.8-27b-heretic-uncensored-Q4_K_M.gguf",
+        "url": "https://huggingface.co/mlasli/Qwen3.8-27B-Heretic-Uncensored-Q4_K_M-GGUF/resolve/76d1490ff390f25cc8249fa95e028b2494853534/qwen3.8-27b-heretic-uncensored-Q4_K_M.gguf?download=true",
+        "size": 16998720896,
+        "sha256": "fa4ca4b2e37aa4750eaaaa2c3eca3ebba43f17d2a00718c73ed3ac78a4ce5349",
+        "source": "https://huggingface.co/mlasli/Qwen3.8-27B-Heretic-Uncensored-Q4_K_M-GGUF"
+      }
+    }
+  },
+  "runtime_release": "prism-b10709-9a9394a",
+  "runtime": {
+    "darwin-arm64": {"asset": "macos-arm64", "sha256": "f9cdf245fb7b832f1996dd776b321d4ae1f23b6d88c380100f636742c3a980ff"},
+    "darwin-x64": {"asset": "macos-x64", "sha256": "a4417a984fa92f72f01e40dfb8fb471a16357c08df62e72e41b8a190a29d916d"},
+    "linux-arm64": {"asset": "ubuntu-arm64", "sha256": "f97eeed89b61786c41aba66caa5d39aa17e9435754ee19ad36a7de8ca3f32f49"},
+    "linux-x64": {"asset": "ubuntu-x64", "sha256": "48b487f00fd2b27bc3ef77c701b43c1c23a4af484d2a203ae87d0efc41506728"},
+    "windows-x64": {"asset": "win-cpu-x64", "sha256": "92cd4d1cee11107593ff87d77eb57b02d804c86dd4b13224e18ba963a4271ad8"}
+  }
+}
